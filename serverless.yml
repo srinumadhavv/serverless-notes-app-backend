@@ -38,7 +38,11 @@ provider:
         - dynamodb:DeleteItem
         - dynamodb:CreateTable
       Resource: "arn:aws:dynamodb:${opt:region,self:provider.region}:*:table/${self:provider.environment.NOTES_TABLE}"
-
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+      Resource: "arn:aws:dynamodb:${opt:region,self:provider.region}:*:table/${self:provider.environment.NOTES_TABLE}/index/*"
 functions:
   add-note:
     handler: api/add-note.handler
