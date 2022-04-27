@@ -1,4 +1,4 @@
-name: Deploy sls-notes-backend
+name: Deploy sls-notes-backend-dev
 
 on:
   push:
