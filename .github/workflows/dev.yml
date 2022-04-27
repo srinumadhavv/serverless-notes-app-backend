@@ -3,7 +3,7 @@ name: Deploy sls-notes-backend
 on:
   push:
     branches:
-      - dev
+      - madhav_dev
 
 jobs:
   deploy:
